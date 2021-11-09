@@ -27,3 +27,5 @@ Route::get('/home', [
 
 
 Route::resource('inventories', App\Http\Controllers\InventoryController::class);
+
+Route::resource('logs', App\Http\Controllers\LogsController::class);

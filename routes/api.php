@@ -18,4 +18,6 @@ use App\Http\Controllers\API\InventoryController;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
-Route::get('/inventory',[InventoryController::class,'index']);
+Route::post('login',[InventoryController::class,'login']);
+Route::post('register',[InventoryController::class,'register']);
+Route::post('reset-password',[InventoryController::class,'resetPassword']);
