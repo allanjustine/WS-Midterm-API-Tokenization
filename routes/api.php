@@ -2,6 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\API\UsersController;
 use App\Http\Controllers\API\InventoryController;
 
 /*
@@ -18,6 +19,10 @@ use App\Http\Controllers\API\InventoryController;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
-Route::post('login',[InventoryController::class,'login']);
-Route::post('register',[InventoryController::class,'register']);
-Route::post('reset-password',[InventoryController::class,'resetPassword']);
+Route::post('login',[UsersController::class,'login']);
+Route::post('register',[UsersController::class,'register']);
+Route::post('reset-password',[UsersController::class,'resetPassword']);
+
+Route::get('get-all-inventories', [InventoryController::class, 'getAllInventories']);
+Route::get('get-inventory', [InventoryController::class, 'getInventory']);
+Route::get('search-inventory', [InventoryController::class, 'searchInventory']);
