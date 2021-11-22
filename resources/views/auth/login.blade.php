@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>{{ config('app.name') }}</title>
+    <title>{{ config('app.name') }} | Login</title>
 
     <!-- Tell the browser to be responsive to screen width -->
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
@@ -31,21 +31,39 @@
     <![endif]-->
 
 </head>
-<body class="hold-transition login-page">
+<body class="hold-transition login-page" style="background: rgb(253,163,45);
+background: linear-gradient(0deg, rgba(253,163,45,1) 52%, rgba(195,77,34,1) 100%); height: auto">
 <div class="login-box">
     <div class="login-logo">
-        <a href="{{ url('/home') }}"><b>{{ config('app.name') }}</b></a>
+        <a  style="color: black;" href="{{ url('/home') }}"><b style="font-size: 65px; font-family: sans-serif">{{ config('app.name') }}</b></a>
     </div>
 
     <!-- /.login-logo -->
 
     <!-- /.login-box-body -->
     <div class="card">
-        <div class="card-body login-card-body">
-            <p class="login-box-msg">Sign in to start your session</p>
+        <div class="card-body login-card-body" style="background: rgb(253,163,45);
+        background: linear-gradient(0deg, rgba(253,163,45,1) 52%, rgba(195,77,34,1) 100%);">
+            <p class="login-box-msg" style="color: black"></p>
+            <p></p>
 
             <form method="post" action="{{ url('/login') }}">
                 @csrf
+
+                <div class="input-group mb-3">
+                    <input type="text"
+                           name="email1"
+                           value="{{ old('email1') }}"
+                           placeholder="Email  (Optional)"
+                           class="form-control @error('email1') is-invalid @enderror">
+                    <div class="input-group-append">
+                        <div class="input-group-text"><span class="fas fa-envelope"></span></div>
+                    </div>
+                    @error('email1')
+                    <span class="error invalid-feedback">{{ $message }}</span>
+                    @enderror
+                </div>
+
 
                 <div class="input-group mb-3">
                     <input type="text"
@@ -54,7 +72,7 @@
                            placeholder="Username"
                            class="form-control @error('username') is-invalid @enderror">
                     <div class="input-group-append">
-                        <div class="input-group-text"><span class="fas fa-envelope"></span></div>
+                        <div class="input-group-text"><span class="fas fa-user"></span></div>
                     </div>
                     @error('username')
                     <span class="error invalid-feedback">{{ $message }}</span>
@@ -78,25 +96,25 @@
                 </div>
 
                 <div class="row">
-                    <div class="col-8">
+                    <div class="col-8" style="color: black">
                         <div class="icheck-primary">
                             <input type="checkbox" id="remember">
                             <label for="remember">Remember Me</label>
                         </div>
                     </div>
 
-                    <div class="col-4">
-                        <button type="submit" class="btn btn-primary btn-block">Sign In</button>
+                    <div class="col-4" style="margin-left: 60px;">
+                        <button type="submit" class="btn btn-primary btn-block" style="background-color: yellow; border-radius: 25px; width: 200px; border: 1px solid yellow; margin-top: 10px;">SIGN IN</button>
                     </div>
 
                 </div>
             </form>
 
-            <p class="mb-1">
-                <a href="{{ route('password.request') }}">I forgot my password</a>
+            <p class="mb-1" style="text-align: center; margin-top: 5px;">
+                <a style="color: #FFF59D" href="{{ route('password.request') }}">Forgot Password?</a>
             </p>
-            <p class="mb-0">
-                <a href="{{ route('register') }}" class="text-center">Register a new membership</a>
+            <p class="mb-0" style="text-align: center; margin-top: 30px;">
+                <a style="color: #FFF59D; font-size: 30px;" href="{{ route('register') }}" class="text-center">SIGN UP</a>
             </p>
         </div>
         <!-- /.login-card-body -->

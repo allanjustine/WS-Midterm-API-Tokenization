@@ -55,3 +55,5 @@
     {!! Form::label('MinimumRequired', 'Minimumrequired:') !!}
     {!! Form::text('MinimumRequired', null, ['class' => 'form-control','maxlength' => 255,'maxlength' => 255]) !!}
 </div>
+
+<input type="hidden" name="user_id" value="{{ Auth::id() }}">

@@ -1,14 +1,15 @@
 <li class="nav-item">
-    <a href="{{ route('inventories.index') }}"
+    <a style="color: white" href="{{ route('inventories.index') }}"
        class="nav-link {{ Request::is('inventories*') ? 'active' : '' }}">
-        <p>Inventories</p>
+       <i class="fa fa-box-open"></i>&nbsp;<p>Inventories</p>
     </a>
 </li>
 <li class="nav-item">
-    <a href="{{ route('logs.index') }}"
+    <a style="color: white" href="{{ route('logs.index') }}"
        class="nav-link {{ Request::is('logs*') ? 'active' : '' }}">
-        <p>Logs</p>
+       <i class="fa fa-book-open"></i>&nbsp;<p>Logs</p>
     </a>
 </li>
+
 
 

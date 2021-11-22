@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>{{ config('app.name') }} | Registration Page</title>
+    <title>{{ config('app.name') }} | Sign Up Page</title>
 
     <!-- Tell the browser to be responsive to screen width -->
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
@@ -30,15 +30,17 @@
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
 </head>
-<body class="hold-transition register-page">
+<body class="hold-transition register-page" style="background: rgb(253,163,45);
+background: linear-gradient(0deg, rgba(253,163,45,1) 52%, rgba(195,77,34,1) 100%); height: auto;">
 <div class="register-box">
     <div class="register-logo">
-        <a href="{{ url('/home') }}"><b>{{ config('app.name') }}</b></a>
+        <a style="font-size: 65px; font-family: sans-serif; color:black" href="{{ url('/home') }}"><b>{{ config('app.name') }}</b></a>
     </div>
 
     <div class="card">
-        <div class="card-body register-card-body">
-            <p class="login-box-msg">Register a new membership</p>
+        <div class="card-body register-card-body" style="background: rgb(253,163,45);
+        background: linear-gradient(0deg, rgba(253,163,45,1) 52%, rgba(195,77,34,1) 100%);">
+            <p style="color: #FFF59D" class="login-box-msg">SIGN UP</p>
 
             <form method="post" action="{{ route('register') }}">
                 @csrf
@@ -112,20 +114,22 @@
                     <div class="col-8">
                         <div class="icheck-primary">
                             <input type="checkbox" id="agreeTerms" name="terms" value="agree">
-                            <label for="agreeTerms">
+                            <label for="agreeTerms" style="color: black">
                                 I agree to the <a href="#">terms</a>
                             </label>
                         </div>
                     </div>
                     <!-- /.col -->
-                    <div class="col-4">
-                        <button type="submit" class="btn btn-primary btn-block">Register</button>
+                    <div class="col-4" style="margin-left: 60px;">
+                        <button type="submit" class="btn btn-primary btn-block" style="background-color: yellow; border-radius: 25px; border: 1px solid yellow; margin-top: 20px; width: 200px;">Register</button>
                     </div>
+
                     <!-- /.col -->
                 </div>
             </form>
-
-            <a href="{{ route('login') }}" class="text-center">I already have a membership</a>
+            <div style="text-align: center; margin-top: 20px;">
+            <a href="{{ route('login') }}" class="text-center" style="color: #FFF59D;">I already have account</a>
+            </div>
         </div>
         <!-- /.form-box -->
     </div><!-- /.card -->

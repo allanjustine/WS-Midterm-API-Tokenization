@@ -15,14 +15,14 @@ class CreateInventoryTable extends Migration
     {
         Schema::create('inventory', function (Blueprint $table) {
             $table->id();
-            $table->string('ProductName');
-            $table->integer('PartNumber');
-            $table->string("ProductLabel");
-            $table->date('StartingInventory');
-            $table->string('InventoryReceived');
-            $table->string('InventoryShipped');
-            $table->string('InventoryOnHand');
-            $table->smallInteger('MinimumRequired');
+            $table->string('ProductName')->nullable();
+            $table->integer('PartNumber')->nullable();
+            $table->string("ProductLabel")->nullable();
+            $table->date('StartingInventory')->nullable();
+            $table->string('InventoryReceived')->nullable();
+            $table->string('InventoryShipped')->nullable();
+            $table->string('InventoryOnHand')->nullable();
+            $table->smallInteger('MinimumRequired')->nullable();
             $table->timestamps();
         });
     }

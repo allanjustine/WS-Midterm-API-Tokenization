@@ -19,7 +19,7 @@
 
             {!! Form::open(['route' => 'inventories.store']) !!}
 
-            <div class="card-body">
+            <div class="card-body" style="background: rgb(253,163,45);">
 
                 <div class="row">
                     @include('inventories.fields')
@@ -27,9 +27,9 @@
 
             </div>
 
-            <div class="card-footer">
+            <div class="card-footer" style="background: rgb(253,163,45)">
                 {!! Form::submit('Save', ['class' => 'btn btn-primary']) !!}
-                <a href="{{ route('inventories.index') }}" class="btn btn-default">Cancel</a>
+                <a href="{{ route('inventories.index') }}" style="background: rgb(253,163,45);" class="btn btn-default">Cancel</a>
             </div>
 
             {!! Form::close() !!}

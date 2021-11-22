@@ -71,13 +71,13 @@ class Inventory extends Model
      */
     public static $rules = [
         'ProductName' => 'required|string|max:255',
-        'PartNumber' => 'required|string|max:255',
+        'PartNumber' => 'required|string|max:255|numeric',
         'ProductLabel' => 'required|string|max:255',
         'StartingInventory' => 'required',
         'InventoryReceived' => 'required|string|max:255',
         'InventoryShipped' => 'required|string|max:255',
         'InventoryOnHand' => 'required|string|max:255',
-        'MinimumRequired' => 'required|string|max:255',
+        'MinimumRequired' => 'required|string|max:255|numeric',
         'created_at' => 'nullable',
         'updated_at' => 'nullable'
     ];

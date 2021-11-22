@@ -8,7 +8,7 @@
                     <h1>Logs</h1>
                 </div>
                 <div class="col-sm-6">
-                    <a class="btn btn-primary float-right"
+                    <a style="background-color: rgb(253,163,45)" class="btn btn-primary float-right"
                        href="{{ route('logs.create') }}">
                         Add New
                     </a>
@@ -24,12 +24,13 @@
         <div class="clearfix"></div>
 
         <div class="card">
-            <div class="card-body p-0">
+            <div style="background: rgb(253,181,45);
+            background: linear-gradient(0deg, rgba(253,181,45,1) 52%, rgba(195,77,34,1) 100%);" class="card-body p-0">
                 @include('logs.table')
 
                 <div class="card-footer clearfix float-right">
                     <div class="float-right">
-                        
+
                     </div>
                 </div>
             </div>
